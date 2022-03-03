@@ -8,7 +8,9 @@ export class ConfigPathsResolver {
     );
 
     return [
+      path.posix.join(baseEnvPath, `.env.${envName}.local`),
       path.posix.join(baseEnvPath, `.env.${envName}`),
+      path.posix.join(baseEnvPath, '.env.local'),
       path.posix.join(baseEnvPath, '.env'),
     ].map((path) => path.trim());
   }
